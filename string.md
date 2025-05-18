@@ -57,7 +57,7 @@ value：只能是 0 或 1<br>
 <br>
 ### 9.BITCOUNT key [start end]<br>
 统计一个字符串键中被设置为 1 的 bit（位）的数量<br>
-start 和 end（可选）：按字节（byte）范围进行统计，索引从 0 开始。可以为负数（表示从末尾倒数）<br>
+start 和 end（可选）：<b><u>按字节（byte）</u></b>范围进行统计，索引从 0 开始。可以为负数（表示从末尾倒数）<br>
 <img width="320" alt="image" src="https://github.com/user-attachments/assets/5f1563df-9b7d-4fe6-85f2-91f726f90379" />
 <br>
 <br>
