@@ -1,6 +1,7 @@
 # 简单动态字符串sds
 
 ## 源码
+### 1.sds定义
 > src/sds.c   src/sds.h
 ```c
 // Redis 在内部用 typedef 封装了 sds：
@@ -21,3 +22,23 @@ struct __attribute__ ((__packed__)) sdshdr8 {
 
 ```
 sdshdr16、sdshdr32、sdshdr64一样的定义
+
+### 2.操作函数
+```c
+#define SDS_HDR(T,s) ((struct sdshdr##T *)((s)-(sizeof(struct sdshdr##T))))
+
+static inline size_t sdslen(const sds s) {
+    switch (sdsType(s)) {
+        case SDS_TYPE_5: return SDS_TYPE_5_LEN(s);
+        case SDS_TYPE_8:
+            return SDS_HDR(8,s)->len;
+        case SDS_TYPE_16:
+            return SDS_HDR(16,s)->len;
+        case SDS_TYPE_32:
+            return SDS_HDR(32,s)->len;
+        case SDS_TYPE_64:
+            return SDS_HDR(64,s)->len;
+    }
+    return 0;
+}
+```
