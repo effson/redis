@@ -9,27 +9,11 @@ struct __attribute__ ((__packed__)) sdshdr5 {
     char buf[];
 };
 struct __attribute__ ((__packed__)) sdshdr8 {
-    uint8_t len; /* used */
-    uint8_t alloc; /* excluding the header and null terminator */
-    unsigned char flags; /* 3 lsb of type, 5 unused bits */
-    char buf[];
+    uint8_t len; /* 字符串长度 */
+    uint8_t alloc; /* 分配的总空间 */
+    unsigned char flags; /* 类型标识（低 3 位） */
+    char buf[]; /*字符数组*/
 };
-struct __attribute__ ((__packed__)) sdshdr16 {
-    uint16_t len; /* used */
-    uint16_t alloc; /* excluding the header and null terminator */
-    unsigned char flags; /* 3 lsb of type, 5 unused bits */
-    char buf[];
-};
-struct __attribute__ ((__packed__)) sdshdr32 {
-    uint32_t len; /* used */
-    uint32_t alloc; /* excluding the header and null terminator */
-    unsigned char flags; /* 3 lsb of type, 5 unused bits */
-    char buf[];
-};
-struct __attribute__ ((__packed__)) sdshdr64 {
-    uint64_t len; /* used */
-    uint64_t alloc; /* excluding the header and null terminator */
-    unsigned char flags; /* 3 lsb of type, 5 unused bits */
-    char buf[];
-};
+
 ```
+sdshdr16、sdshdr32、sdshdr64一样的定义
