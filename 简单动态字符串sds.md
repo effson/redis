@@ -3,6 +3,9 @@
 ## 源码
 > src/sds.c   src/sds.h
 ```c
+// Redis 在内部用 typedef 封装了 sds：
+typedef char *sds;
+
 /* Note: sdshdr5 is never used, we just access the flags byte directly.
  * However is here to document the layout of type 5 SDS strings. */
 struct __attribute__ ((__packed__)) sdshdr5 {
