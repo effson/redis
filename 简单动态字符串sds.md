@@ -1,6 +1,7 @@
 # 简单动态字符串sds
 
 ## 源码
+> src/sds.c   src/sds.h
 ```c
 /* Note: sdshdr5 is never used, we just access the flags byte directly.
  * However is here to document the layout of type 5 SDS strings. */
