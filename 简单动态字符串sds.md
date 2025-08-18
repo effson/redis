@@ -1,5 +1,5 @@
 # 简单动态字符串sds
-SET / GET / APPEND → String
+## SET / GET / APPEND → String
 ## 源码
 ### 1.sds定义
 > src/sds.c   src/sds.h
