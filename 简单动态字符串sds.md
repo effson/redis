@@ -19,7 +19,8 @@ struct __attribute__ ((__packed__)) sdshdr8 {
     unsigned char flags; /* 类型标识（低 3 位） */
     char buf[]; /*字符数组*/
 };
-
+```
+sdshdr16、sdshdr32、sdshdr64一样的定义
 #### 柔性数组实现上的特点/注意点
 - 必须是struct最后一个成员，且
 - 不计入 sizeof(struct)，sizeof不会包含柔性数组的长度
@@ -28,9 +29,6 @@ struct __attribute__ ((__packed__)) sdshdr8 {
 ```c
 sh = malloc(sizeof(struct sdshdr32) + len + 1);
 ```
-
-```
-sdshdr16、sdshdr32、sdshdr64一样的定义
 
 ### 2.操作函数
 ```c
