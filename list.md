@@ -28,3 +28,19 @@ LPUSH 命令用于向一个列表（List）的头部插入一个或多个值：
 
 <img width="257" height="159" alt="image" src="https://github.com/user-attachments/assets/fb5ddb87-2143-449b-8eea-20c0b7552d6e" />
 
+## 4. LLEN key
+### 含义
+- 返回链表的长度，也就是元素个数
+
+### 实例
+
+<img width="170" height="27" alt="image" src="https://github.com/user-attachments/assets/2617928e-3ccc-4d3e-acb3-3dbbb1ec57ea" />
+
+## 5. LPOP key [count]
+### 含义
+- 不带 count 参数：这是 LPOP 的基本用法。它会从列表的头部移除一个元素，并将其返回
+- 带 count 参数（Redis 6.0+）：如果你指定了一个正整数 count，LPOP 会从列表头部移除多个元素，并将它们作为一个列表返回。它会尽量返回 count 个元素，但如果列表中的元素不足 count 个，它会返回所有剩余的元素
+
+### 实例
+
+<img width="187" height="86" alt="image" src="https://github.com/user-attachments/assets/cdd6a213-7ed9-4d51-895e-37e5340be2a1" />
