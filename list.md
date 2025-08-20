@@ -44,3 +44,12 @@ LPUSH 命令用于向一个列表（List）的头部插入一个或多个值：
 ### 实例
 
 <img width="187" height="86" alt="image" src="https://github.com/user-attachments/assets/cdd6a213-7ed9-4d51-895e-37e5340be2a1" />
+
+## 6. RPOP key [count]
+### 含义
+- 不带 count 参数：这是 RPOP 的基本用法。它会从列表的尾部移除一个元素，并将其返回
+- 带 count 参数（Redis 6.0+）：如果你指定一个正整数 count，RPOP 会从列表尾部移除多个元素，并将它们作为一个列表返回。如果列表中元素不足 count 个，它会返回所有剩余的元素
+
+### 实例
+
+<img width="179" height="90" alt="image" src="https://github.com/user-attachments/assets/8517ac75-0ef7-4200-a75c-e62db30960eb" />
