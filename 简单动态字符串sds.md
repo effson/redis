@@ -20,6 +20,15 @@ struct __attribute__ ((__packed__)) sdshdr8 {
     char buf[]; /*字符数组*/
 };
 
+#### 柔性数组实现上的特点/注意点
+- 必须是struct最后一个成员，且
+- 不计入 sizeof(struct)，sizeof不会包含柔性数组的长度
+- 只需要一次malloc，一次free<br>
+
+```c
+sh = malloc(sizeof(struct sdshdr32) + len + 1);
+```
+
 ```
 sdshdr16、sdshdr32、sdshdr64一样的定义
 
