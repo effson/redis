@@ -46,25 +46,33 @@
 ## 7. SETNX key value<br>
 ### 含义
 - 只有当 key 不存在时，才设置它的值<br>
-- 如果 key 不存在，则设置为 "Hello"，并返回 1（成功）<br>
+- 如果 key 不存在，则设置为 "value"，并返回 1（成功）<br>
 - 如果 key 已存在，则不做任何操作，返回 0（失败）<br>
+
+### 实例
 <img width="197" alt="image" src="https://github.com/user-attachments/assets/85a66574-5ad5-44ae-8870-872f984c91b5" />
-<br>
-<br>
-### 7.SETBIT key offset value<br>
-将某个字符串键（key）上某个 位（bit） 的值设置为 0 或 1。这是操作 二进制位（bitmaps） 的基础命令之一<br>
-key：要设置的字符串键<br>
-offset：从字符串开头计算的位偏移量（以 bit 为单位，从 0 开始）<br>
-value：只能是 0 或 1<br>
+
+## 8. SETBIT key offset value
+### 含义
+- 将某个字符串键（key）上某个 位（bit） 的值设置为 0 或 1。这是操作 二进制位（bitmaps） 的基础命令之一
+- key：要设置的字符串键<br>
+- offset：从字符串开头计算的位偏移量（以 bit 为单位，从 0 开始）<br>
+- value：只能是 0 或 1<br>
+
+### 实例
+
 <img width="322" alt="image" src="https://github.com/user-attachments/assets/91a6f59c-ab73-42d6-b6bc-9d941af9608e" />
-<br>
-<br>
-### 8.GETBIT key offset<br>
-获取某个字符串键在指定偏移位置上的位（bit）值<br>
+
+## 9. GETBIT key offset
+### 含义
+- 获取某个字符串键在指定偏移位置上的位（bit）值<br>
+
+### 实例
 <img width="322" alt="image" src="https://github.com/user-attachments/assets/91a6f59c-ab73-42d6-b6bc-9d941af9608e" /><br>
-<br>
-<br>
-### 9.BITCOUNT key [start end]<br>
-统计一个字符串键中被设置为 1 的 bit（位）的数量<br>
-start 和 end（可选）：<b><u>按字节（byte）</u></b>范围进行统计，索引从 0 开始。可以为负数（表示从末尾倒数）<br>
+
+## 10. BITCOUNT key [start end]<br>
+- 统计一个字符串键中被设置为 1 的 bit（位）的数量<br>
+- start 和 end（可选）：<b><u>按字节（byte）</u></b>范围进行统计，索引从 0 开始。可以为负数（表示从末尾倒数）
+
+### 实例
 <img width="320" alt="image" src="https://github.com/user-attachments/assets/5f1563df-9b7d-4fe6-85f2-91f726f90379" />
