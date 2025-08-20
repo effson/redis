@@ -71,6 +71,7 @@
 <img width="322" alt="image" src="https://github.com/user-attachments/assets/91a6f59c-ab73-42d6-b6bc-9d941af9608e" /><br>
 
 ## 10. BITCOUNT key [start end]<br>
+### 含义
 - 统计一个字符串键中被设置为 1 的 bit（位）的数量<br>
 - start 和 end（可选）：<b><u>按字节（byte）</u></b>范围进行统计，索引从 0 开始。可以为负数（表示从末尾倒数）
 
