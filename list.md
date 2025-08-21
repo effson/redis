@@ -55,3 +55,11 @@ LPUSH 命令用于向一个列表（List）的头部插入一个或多个值：
 <img width="179" height="90" alt="image" src="https://github.com/user-attachments/assets/8517ac75-0ef7-4200-a75c-e62db30960eb" />
 
 ## 7. BLPOP key [key ...] timeout
+### 含义
+- key [key ...]：一个或多个列表的键名
+- timeout：一个以秒为单位的整数，表示阻塞的超时时间。如果 timeout 为 0，则表示永久阻塞
+- 从第一个非空列表的头部移除一个元素并返回，然后立即终止
+- 提供的列表为空，BLPOP 就会阻塞当前连接，直到有另一个客户端向其中一个列表 key 添加了元素（例如使用 LPUSH 或 RPUSH 命令）。一旦有元素被添加，BLPOP 会立即返回该元素。
+- 达到了指定的 timeout 时间。如果超时，BLPOP 将返回 nil
+
+### 实例
