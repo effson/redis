@@ -11,13 +11,13 @@
  
 ## 2. 发布/订阅模式
 发布者用 PUBLISH 向某个频道（channel）发消息；订阅者用 SUBSCRIBE（或 PSUBSCRIBE）接收。消息按发送顺序推送给订阅者。
-### 2.1 SUBSCRIBE <channel>
+### 2.1 SUBSCRIBE [channel]
 在三个客户端订阅频道：
 
 <img width="281" height="74" alt="image" src="https://github.com/user-attachments/assets/814952ad-ba6e-4f5e-a7ca-d20ed246a31d" />
 
-### PUBLISH <channel> <content>
+### PUBLISH [channel] [<content]
 
 <img width="1018" height="584" alt="image" src="https://github.com/user-attachments/assets/dce92e97-3ce1-4c54-9956-0d7b70463f95" />
 
-### 2.2 PSUBSCRIBE <channel>
+### 2.2 PSUBSCRIBE [<channel]
