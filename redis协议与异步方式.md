@@ -10,7 +10,7 @@
 - 4. 客户端一次或分批 read()，按相同顺序取回所有结果。 回复顺序与发送顺序一一对应，没有乱序与并发交错。
  
 ## 2. 发布/订阅模式
-发布者用 PUBLISH 向某个频道（channel）发消息；订阅者用 SUBSCRIBE（或 PSUBSCRIBE）接收。消息按发送顺序推送给订阅者。
+发布者用 PUBLISH 向某个频道（channel）发消息；订阅者用 SUBSCRIBE（或 PSUBSCRIBE）接收。消息按发送顺序推送给订阅者。仅做实时广播，不会保存消息。
 ### 2.1 SUBSCRIBE [channel]
 在三个客户端订阅频道：
 
