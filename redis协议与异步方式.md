@@ -16,8 +16,13 @@
 
 <img width="281" height="74" alt="image" src="https://github.com/user-attachments/assets/814952ad-ba6e-4f5e-a7ca-d20ed246a31d" />
 
-### PUBLISH [channel] [<content]
+### 2.2 PUBLISH [channel] [content]
 
 <img width="1018" height="584" alt="image" src="https://github.com/user-attachments/assets/dce92e97-3ce1-4c54-9956-0d7b70463f95" />
 
-### 2.2 PSUBSCRIBE [<channel]
+### 2.3 PSUBSCRIBE [channel]
+模式匹配
+
+<img width="280" height="67" alt="image" src="https://github.com/user-attachments/assets/d87bab49-5161-49e8-aa1e-6131a3e58930" />
+
+<img width="1027" height="576" alt="image" src="https://github.com/user-attachments/assets/b5d55b60-a844-4ae5-8df0-9dfae1de6f5b" />
