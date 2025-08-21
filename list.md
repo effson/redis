@@ -65,7 +65,14 @@ LPUSH 命令用于向一个列表（List）的头部插入一个或多个值：
 
 ### 实例
 
+## 8. LTRIM key start stop
+### 含义
+- 修剪 Redis 列表，使其只保留指定索引范围内的元素
+- key：列表的键名
+- start：起始索引
+- stop：结束索引
 
+### 实例
 
 # 应用
 ## 1. 栈
@@ -90,5 +97,3 @@ LPUSH + BRPOP
 或者
 RPUSH + BLPOP
 ```
-
-
