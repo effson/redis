@@ -26,3 +26,5 @@ set company:c2 xxxx
 ```bash
 set name:id:activity xxxx xxx ...
 ```
+## 2. value的设计
+根据存储的对象的特点选择合适的对象
