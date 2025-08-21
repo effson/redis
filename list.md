@@ -53,3 +53,5 @@ LPUSH 命令用于向一个列表（List）的头部插入一个或多个值：
 ### 实例
 
 <img width="179" height="90" alt="image" src="https://github.com/user-attachments/assets/8517ac75-0ef7-4200-a75c-e62db30960eb" />
+
+## 7. BLPOP key [key ...] timeout
