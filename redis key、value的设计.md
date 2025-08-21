@@ -22,3 +22,7 @@ set company:c1 xxxx
 set company:c2 xxxx
 ...
 ```
+复杂例子：
+```bash
+set name:id:activity xxxx xxx ...
+```
