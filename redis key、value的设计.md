@@ -27,4 +27,23 @@ set company:c2 xxxx
 set name:id:activity xxxx xxx ...
 ```
 ## 2. value的设计
-根据存储的对象的特点选择合适的对象
+根据存储的对象的特点选择合适的对象<br>
+### 存储用户信息
+使用hash：
+```bash
+hmset custom:1 name alice age 26 sex female
+```
+### 商品购物车
+hash + list:
+```bash
+# 添加商品
+hmset Mychart:10001 40001 1 cost 5099 desc "laptop" 
+lpush MyItem:10001 40001
+
+# 增加/减少数量
+hincrby Mychart:10001 40001 1
+hincrby Mychart:10001 40001 -1
+
+#显示所有物品数量
+hlen Mychart:10001
+```
