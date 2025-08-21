@@ -1,3 +1,4 @@
+# List 命令
 ## 1. LPUSH key element [element ...]
 ### 含义
 LPUSH 命令用于向一个列表（List）的头部插入一个或多个值：
@@ -63,3 +64,31 @@ LPUSH 命令用于向一个列表（List）的头部插入一个或多个值：
 - 达到了指定的 timeout 时间。如果超时，BLPOP 将返回 nil
 
 ### 实例
+
+
+
+# 应用
+## 1. 栈
+先进后出FILO
+```
+LPUSH + LPOP
+或者
+RPUSH + RPOP
+```
+
+## 2. 队列
+先进先出FIFO
+```
+LPUSH + RPOP
+或者
+RPUSH + LPOP
+```
+
+## 3. 阻塞队列
+```
+LPUSH + BRPOP
+或者
+RPUSH + BLPOP
+```
+
+
