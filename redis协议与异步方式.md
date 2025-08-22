@@ -60,3 +60,7 @@
 
 ### 3.2.3 I — Isolation 隔离性
 并发执行的事务互不干扰;Redis是单线程执行，天然具备隔离性
+
+### 3.2.4 D — Durability 持久性
+Redis只有在AOF持久化策略的时候，并且需要在redis.conf中appendfsync=always才具备持久性:实际项目几乎不会使用AOF持久化策略<br>
+<mark>lua脚本满足原子性和隔离性，一致性和持久性不满足</mark>
