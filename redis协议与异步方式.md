@@ -113,3 +113,5 @@ SCRIPT LOAD 'local key = KEYS[1]; local val = redis.call("get", key); if not val
 EVALSHA eb36bea95c939777b0034e2f40554d10491500e3 1 score
 ```
 <img width="448" height="43" alt="image" src="https://github.com/user-attachments/assets/c2404b0e-ba24-4bd2-866c-f11b9365e852" />
+
+# 4. Redis异步连接
