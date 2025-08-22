@@ -82,3 +82,14 @@ MULTI开启事务后，事务执行过程中，单个命令是入队操作，知
 
 ### 3.2.4 WATCH key
 在 EXEC 前如果任一被 watch 的键被别的客户端修改过，EXEC 会直接放弃执行（返回 nil）
+
+## 3.3 lua脚本
+### 3.3.1 EVAL
+```bash
+EVAL 'local key = KEYS[1]; local val = redis.call("get", key); redis.call("set", key, val * 2); return val * 2;' 1 score
+```
+
+<img width="197" height="26" alt="image" src="https://github.com/user-attachments/assets/baf22d19-8a7c-4dc3-9c25-41bc57e36d4e" />
+
+<img width="842" height="29" alt="image" src="https://github.com/user-attachments/assets/1b9b26fe-0076-4845-8ee5-6b6543a9acd8" />
+
