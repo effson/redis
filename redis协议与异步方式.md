@@ -85,6 +85,7 @@ MULTI开启事务后，事务执行过程中，单个命令是入队操作，知
 
 ## 3.3 lua脚本
 ### 3.3.1 EVAL
+一旦set就无法回滚，所以要先判定后写入，脚本运行中途出错不会撤销已写入的修改
 ```bash
 EVAL 'local key = KEYS[1]; local val = redis.call("get", key); redis.call("set", key, val * 2); return val * 2;' 1 score
 ```
@@ -99,3 +100,16 @@ return val * 2;' 1 score1
 ```
 
 <img width="1007" height="86" alt="image" src="https://github.com/user-attachments/assets/55b22eba-180a-4ee9-acf2-f6ff8b710b9e" />
+
+
+### 3.3.2 EVALSHA
+```bash
+SCRIPT LOAD 'local key = KEYS[1]; local val = redis.call("get", key); if not val then val = 1 end; redis.call("set", key, val * 2); return val * 2;'
+```
+
+<img width="1003" height="44" alt="image" src="https://github.com/user-attachments/assets/1b1594be-59c6-4e69-8637-6d45dc23db28" />
+
+```bash
+EVALSHA eb36bea95c939777b0034e2f40554d10491500e3 1 score
+```
+<img width="448" height="43" alt="image" src="https://github.com/user-attachments/assets/c2404b0e-ba24-4bd2-866c-f11b9365e852" />
