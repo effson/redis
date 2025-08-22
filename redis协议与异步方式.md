@@ -93,3 +93,8 @@ EVAL 'local key = KEYS[1]; local val = redis.call("get", key); redis.call("set",
 
 <img width="842" height="29" alt="image" src="https://github.com/user-attachments/assets/1b9b26fe-0076-4845-8ee5-6b6543a9acd8" />
 
+```bash
+EVAL 'local key = KEYS[1]; local val = redis.call("get", key); if not val then val = 1 end; redis.call("set", key, val * 2); return val * 2;' 1 score1
+```
+
+<img width="1007" height="86" alt="image" src="https://github.com/user-attachments/assets/55b22eba-180a-4ee9-acf2-f6ff8b710b9e" />
