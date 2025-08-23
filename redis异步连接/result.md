@@ -1,7 +1,7 @@
 ### 编译执行
 
 ```bash
-root@worker02:/home/jeff/redis# gcc -I.  chainbuffer/chainbuffer.c redis_test_async.c reactor.c -o redis-test-async -lhiredis
+gcc -I. chainbuffer/chainbuffer.c redis_test_async.c reactor.c -o redis-test-async -lhiredis
 ```
 
 ### 同步时延结果
