@@ -49,6 +49,7 @@ BITCOUNT key: 统计字符串中被设置为1的bit数
 ```bash
 SET role:10001 '{["name"]: "mark", ["sex"]: "male", ["age"]: 30}'
 GET role:10001
+# key设计:使⽤有意义字段：role:10001
 ```
 适⽤场景: 对象属性字段很少修改的情况
 
@@ -57,4 +58,17 @@ GET role:10001
 # 统计阅读数
 INCR reads 
 INCRBY reads 100
+```
+#### <mark>分布式锁</mark>
+
+```bash
+# 非公平锁
+SETNX lock 1
+SETNX lock uuid
+ SET lock uuid nx ex 30 # 设置过期时间防⽌死锁
+
+#释放锁
+DEL lock
+if (get(lock) == uuid)
+    del(lock);
 ```
