@@ -134,3 +134,47 @@ RPUSH + BLPOP
 #### <mark>异步消息队列</mark> 
 
 <img width="288" height="67" alt="image" src="https://github.com/user-attachments/assets/7dedce0a-1b64-4e34-8e8e-4026cc7bb197" />
+
+#### <mark>固定窗⼝记录</mark>
+
+```
+LPUSH record xxx
+LPUSH record xx
+...
+
+LTRIM record 0 49
+LRANGE record 0 -1
+```
+
+## 2.3 hash
+### 2.3.1 操作
+
+```bash
+HGET key field # 通过key和field获取对应value
+HSET key field value # 设置单个键值对
+
+HMSET key field1 value1 field2 value2... # 设置多个键值对
+HMGET key field1 field2... # 获取多个field的值
+
+HINCRBY key field increment # 对field值进⾏原⼦增减操作（如战绩统计）
+
+HLEN key # 获取键值对数量
+HDEL key field # 删除指定field
+```
+### 2.3.2 应用
+#### <mark>对象存储 </mark> 
+```bash
+# string: SET role:10001 '{["name"]: "mark", ["sex"]: "male", ["age"]: 30}'
+HSET role:10001 name mark sex male age 30 # ⽀持直接修改特定字段（如HSET role:10001 age 19）
+```
+#### <mark>购物车 </mark> 
+```bash
+# 添加商品
+HSET MyCart:10001 40001 1
+# 修改数量
+HINCRBY MyCart:10001 40001 ±1
+# 删除商品
+HDEL MyCart:10001 40001
+# 统计总数
+HLEN MyCart:10001
+```
