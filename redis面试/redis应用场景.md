@@ -131,3 +131,6 @@ LPUSH + BRPOP
 或者
 RPUSH + BLPOP
 ```
+#### <mark>异步消息队列</mark> 
+
+<img width="288" height="67" alt="image" src="https://github.com/user-attachments/assets/7dedce0a-1b64-4e34-8e8e-4026cc7bb197" />
