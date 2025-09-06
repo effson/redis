@@ -20,7 +20,7 @@
 # 2. Redis的应用场景
 ## 2.1 string
 
-### 2.1.1 操作:
+### 2.1.1 操作
 基本操作：
 ```bash
 SET key val: 设置键值对
@@ -44,7 +44,7 @@ SETBIT key offset value: 设置/清空字符串在offset处的bit值
 GETBIT key offset: 获取字符串在offset处的bit值
 BITCOUNT key: 统计字符串中被设置为1的bit数
 ```
-### 2.1.2 应用:
+### 2.1.2 应用
 #### <mark>对象存储： 将对象序列化为JSON字符串存储</mark>
 ```bash
 SET role:10001 '{["name"]: "mark", ["sex"]: "male", ["age"]: 30}'
@@ -76,9 +76,13 @@ if (get(lock) == uuid)
 #### <mark>位运算（位统计）</mark>
 ```bash
 # Redis 的 String 在位运算时，本质上是按字节数组（二进制）处理，所以既不是单纯 int，也不是单纯 string
+# ⼆进制安全字符串
 # ⽉签到功能
 SETBIT sign:10001:202106 1 1 # ⽤户10001在2021年6⽉第1天签到
-o BITCOUNT sign:10001:202106 # 统计当⽉签到次数
-o GETBIT sign:10001:202106 2 # 查询第2天是否签到
-
+BITCOUNT sign:10001:202106 # 统计当⽉签到次数
+GETBIT sign:10001:202106 2 # 查询第2天是否签到
 ```
+
+## 2.2 list
+
+### 2.2.1 应用
