@@ -17,4 +17,32 @@
 - Set: ⽆序不重复集合，⽀持交并差运算
 - ZSet: 带排序权重的集合，每个元素关联⼀个score⽤于排序
 
-# Redis的应用场景
+# 2. Redis的应用场景
+## 2.1 string
+
+### 2.1.1 基本操作:
+```bash
+SET key val: 设置键值对
+GET key: 获取键对应的值
+```
+### 2.1.2 原⼦操作:
+```bash
+INCR key: 原⼦加1
+INCRBY key increment: 原⼦加指定整数
+DECR key: 原⼦减1
+DECRBY key decrement: 原⼦减指定整数
+```
+### 2.1.3 条件操作:
+```bash
+SETNX key value: 当key不存在时才设置（返回1表示成功，0表示失败）
+DEL key: 删除键值对
+```
+### 2.1.4 位操作:
+```bash
+SETBIT key offset value: 设置/清空字符串在offset处的bit值
+GETBIT key offset: 获取字符串在offset处的bit值
+BITCOUNT key: 统计字符串中被设置为1的bit数
+```
+
+
+```
