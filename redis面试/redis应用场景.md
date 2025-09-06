@@ -45,7 +45,7 @@ GETBIT key offset: 获取字符串在offset处的bit值
 BITCOUNT key: 统计字符串中被设置为1的bit数
 ```
 ### 2.1.2 应用:
-<mark>对象存储： 将对象序列化为JSON字符串存储</mark>
+#### <mark>对象存储： 将对象序列化为JSON字符串存储</mark>
 ```bash
 SET role:10001 '{["name"]: "mark", ["sex"]: "male", ["age"]: 30}'
 ```
