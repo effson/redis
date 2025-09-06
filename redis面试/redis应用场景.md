@@ -48,4 +48,13 @@ BITCOUNT key: 统计字符串中被设置为1的bit数
 #### <mark>对象存储： 将对象序列化为JSON字符串存储</mark>
 ```bash
 SET role:10001 '{["name"]: "mark", ["sex"]: "male", ["age"]: 30}'
+GET role:10001
+```
+适⽤场景: 对象属性字段很少修改的情况
+
+#### <mark>累加器</mark>
+```bash
+# 统计阅读数
+INCR reads 
+INCRBY reads 100
 ```
