@@ -86,3 +86,26 @@ GETBIT sign:10001:202106 2 # 查询第2天是否签到
 ## 2.2 list
 
 ### 2.2.1 应用
+#### <mark>栈</mark>
+
+```
+# 先进后出FILO
+LPUSH + LPOP
+或者
+RPUSH + RPOP
+```
+
+#### <mark>队列</mark> 
+
+```
+# 先进先出FIFO
+LPUSH + RPOP
+或者
+RPUSH + LPOP
+```
+#### <mark>阻塞队列</mark>  
+```
+LPUSH + BRPOP
+或者
+RPUSH + BLPOP
+```
