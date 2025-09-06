@@ -63,12 +63,14 @@ INCRBY reads 100
 
 ```bash
 # 非公平锁
-SETNX lock 1
+SETNX lock 1  # 排他性: 通过SETNX实现（成功返回1，失败返回0）
 SETNX lock uuid
- SET lock uuid nx ex 30 # 设置过期时间防⽌死锁
+SET lock uuid nx ex 30 # 设置过期时间防⽌死锁
 
 #释放锁
 DEL lock
 if (get(lock) == uuid)
     del(lock);
 ```
+
+#### <mark>位运算（位统计）</mark>
