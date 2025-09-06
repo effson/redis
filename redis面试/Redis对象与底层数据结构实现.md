@@ -27,3 +27,7 @@ typedef struct redisObject {
 | total_bytes(4) | num_elements( ? ) | entries ...        | 0xFF    |
 +----------------+-------------------+--------------------+---------+
 ```
+- total_bytes：整个 listpack 所占字节数（uint32）。
+- num_elements：元素个数（新版可为 32 位计数，早期实现可能更小，达到极值会用 “未知数” 标记）。
+- entries...：一条条紧挨着的变长 entry。
+- 终止符 0xFF：结束标记。
