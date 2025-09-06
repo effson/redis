@@ -84,8 +84,30 @@ GETBIT sign:10001:202106 2 # 查询第2天是否签到
 ```
 
 ## 2.2 list
+### 2.2.1 操作
+```bash
+LPUSH # 从队列左侧⼊队⼀个或多个元素
+LPUSH key value [value...]
 
-### 2.2.1 应用
+LPOP # 从队列左侧弹出⼀个元素
+LPOP key
+
+RPUSH # 从队列右侧⼊队⼀个或多个元素，命令格式为
+RPUSH key value [value...]
+
+RPOP # 从队列右侧弹出⼀个元素
+RPOP key
+
+LRANGE# 返回队列中start到end之间的元素，⽀持正负索引（0表示第⼀个元素，-1表示最后⼀个元素）
+LRANGE key start end
+
+LREM # 从列表中移除前count次出现的值为value的元素
+LREM key count value
+
+BRPOP # RPOP的阻塞版本，当列表为空时会阻塞连接直到超时或有元素可弹出，常⽤于实现延时队列
+```
+
+### 2.2.2 应用
 #### <mark>栈</mark>
 
 ```
