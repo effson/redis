@@ -166,6 +166,7 @@ HDEL key field # 删除指定field
 ```bash
 # string: SET role:10001 '{["name"]: "mark", ["sex"]: "male", ["age"]: 30}'
 HSET role:10001 name mark sex male age 30 # ⽀持直接修改特定字段（如HSET role:10001 age 19）
+# 对象属性值经常变更的情况
 ```
 #### <mark>购物车 </mark> 
 ```bash
@@ -177,4 +178,68 @@ HINCRBY MyCart:10001 40001 ±1
 HDEL MyCart:10001 40001
 # 统计总数
 HLEN MyCart:10001
+```
+
+## 2.4 set
+### 2.4.2 操作
+```bash
+#  添加⼀个或多个指定member元素到集合key中
+SADD key member [member..]
+
+# 计算集合元素个数
+SCARD key
+
+# 返回集合中所有成员
+SMEMBERS key
+
+# 判断成员是否在集合中
+SISMEMBER key member
+
+# 随机返回集合中⼀个或多个元素(不删除)
+SRANDMEMBER key [count]
+
+# 从集合中移除并返回随机元素
+SPOP key [count]
+
+#  返回集合与给定集合的差集
+SDIFF key [key ...]
+
+# 返回所有集合的交集
+SINTER key [key ...]
+
+# 返回多个集合的并集
+SUNION key [key ...]
+```
+### 2.4.2 应用
+
+#### <mark>抽奖系统 </mark> 
+```bash
+# 添加抽奖⽤户
+SADD Award:1 1001 1002 1003 1004 1005 1006
+SADD Award:1 1009
+
+# 随机抽取多位幸运⽤户
+SRANDMEMBER Award:1 10
+
+# 抽取一等奖1人，二等奖2名 三等奖 3名
+SPOP Award:1 1
+SPOP Award:1 2
+SPOP Award:1 3 
+```
+#### <mark>共同关注 </mark> 
+```bash
+# 添加抽奖⽤户
+SADD follow:1 a b c g i o
+SADD follow:2 a y q l c
+
+SINTER follow:1 follow:2
+```
+
+#### <mark>推荐好友 </mark> 
+```bash
+# 添加抽奖⽤户
+SADD follow:1 a b c g i o
+SADD follow:2 a b c
+
+SDIFF follow:1 follow:2
 ```
