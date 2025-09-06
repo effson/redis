@@ -181,7 +181,7 @@ HLEN MyCart:10001
 ```
 
 ## 2.4 set
-### 2.4.2 操作
+### 2.4.1 操作
 ```bash
 #  添加⼀个或多个指定member元素到集合key中
 SADD key member [member..]
@@ -242,4 +242,35 @@ SADD follow:1 a b c g i o
 SADD follow:2 a b c
 
 SDIFF follow:1 follow:2
+```
+
+## 2.5 ZSet
+有序集合(zset)在集合基础上增加了score字段⽤于排序<br>
+保证member唯⼀性的同时，通过score实现有序存储<br>
+### 2.5.1 操作
+```bash
+# 添加与修改
+ZADD key score member [score member ...]
+ZADD rank 100 user1
+ZADD rank 200 user2 150 user3
+
+# 按 score 从小到大返回指定区间的成员
+ZRANGE key start stop [WITHSCORES]
+ZRANGE rank 0 -1 WITHSCORES   # 获取所有成员及分数（升序）
+
+# 返回成员的排名（从 0 开始计数）
+ZRANK rank user3
+ZREVRANK rank user3
+
+# 返回某个成员的 score
+ZSCORE rank user2   # -> 200
+
+# 返回 score 在指定区间的成员（升序）
+ZRANGEBYSCORE rank 100 200 WITHSCORES
+```
+### 2.5.2 应用
+
+#### <mark>排⾏榜功能 </mark> 
+```bash
+
 ```
