@@ -31,6 +31,10 @@ typedef struct redisObject {
 | header(var) | payload(var)   | backlen(var) |
 +-------------+----------------+--------------+
 ```
+
+<img width="713" height="207" alt="image" src="https://github.com/user-attachments/assets/9ba42c34-802f-4a26-b5a5-86c7e8aa1ef4" />
+
+
 - total_bytes：整个 listpack 所占字节数（uint32）。
 - num_elements：元素个数（新版可为 32 位计数，早期实现可能更小，达到极值会用 “未知数” 标记）。
 - entries...：一条条紧挨着的变长 entry。
