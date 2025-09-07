@@ -54,11 +54,11 @@ Redis Hash 有两种底层实现
 
 # 4.Set
 ## 4.1 Intset
-### 使用条件
+### 4.1.1 使用条件
 - 集合中所有元素都是整数
 - intset 里的数是 有序存放的，可以用 二分查找 (intsetSearch)，复杂度 O(logN)，不会重复
 - 且元素数量较少<mark>（小于配置阈值，默认 512）</mark>
-
+### 4.1.2 源码结构
 ```c
 typedef struct intset {
     uint32_t encoding;
@@ -71,3 +71,6 @@ typedef struct intset {
 
 
 ## 4.2 dict
+### 4.2.1 使用条件
+- 集合元素数量多；
+- 或集合中包含非整数元素（字符串、二进制数据）
