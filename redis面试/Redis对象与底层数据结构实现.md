@@ -59,4 +59,14 @@ Redis Hash 有两种底层实现
 - intset 里的数是 有序存放的，可以用 二分查找 (intsetSearch)，复杂度 O(logN)，不会重复
 - 且元素数量较少<mark>（小于配置阈值，默认 512）</mark>
 
+```c
+typedef struct intset {
+    uint32_t encoding;
+    uint32_t length;
+    int8_t contents[];
+} intset;
+```
+<img width="316" height="133" alt="image" src="https://github.com/user-attachments/assets/4ab5f84e-bc97-46a1-a09a-97259e893465" />
+
+
 ## 4.2 dict
