@@ -14,4 +14,6 @@ if uuid == holder.uuid then
 end
 ```
 # 4. 锁超时
-
+```bash
+SET lock uuid NX EX 10
+```
