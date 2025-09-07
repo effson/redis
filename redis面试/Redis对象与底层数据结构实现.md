@@ -39,3 +39,11 @@ typedef struct redisObject {
 - num_elements：元素个数（新版可为 32 位计数，早期实现可能更小，达到极值会用 “未知数” 标记）。
 - entries...：一条条紧挨着的变长 entry。
 - 终止符 0xFF：结束标记。
+
+
+# 3.Hash
+Redis Hash 有两种底层实现
+
+## 3.1 ziplist/listpack（紧凑表）
+### 3.1.1 场景
+当哈希表 field/value 数量少<mark>（默认 < 512）</mark>并且 field 和 value 都比较短<mark>（默认 < 64 字节）</mark>时，采用 ziplist（Redis 5.0 之前）或 listpack（Redis 7.0 之后）存储
