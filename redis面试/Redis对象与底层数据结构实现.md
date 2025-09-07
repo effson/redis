@@ -61,7 +61,7 @@ Redis Hash 有两种底层实现
 ### 4.1.2 源码结构
 ```c
 typedef struct intset {
-    uint32_t encoding;
+    uint32_t encoding; // INTSET_ENC_INT16/32/64
     uint32_t length;
     int8_t contents[];
 } intset;
@@ -78,3 +78,27 @@ typedef struct intset {
 - dict 的键就是 Set 的元素，值一般是一个固定的占位符（比如 NULL）
 - 插入元素时，如果键已存在，就会返回错误，不会重复插入，<mark>保证了 Set 中的元素不重复</mark>
 - SMEMBERS 返回的结果是 无序集合，需要顺序必须显式用SORT key → 临时排序
+
+# 5.Zset
+## 5.1 listpack（旧版是 ziplist）
+### 5.1.1 使用条件
+- 元素数量少<mark>（默认 < 128）</mark>，且 member 和 score 都比较短
+- 内存占用小，所有 (member, score) 按顺序紧凑排布在一个连续内存块中
+
+## 5.2 skiplist + dict
+### 5.2.1 使用条件
+- 元素较多或元素较大时，自动升级为 skiplist+dict
+### 5.2.2 存储
+- dict：member → score 映射（快速 O(1) 查找、更新）
+- skiplist：按 score 升序排列，用于范围查找和有序遍历
+
+# 6 扩展：为什么切换数据结构
+## 6.1 内存数据库
+- 是内存数据库，要节省内存
+## 6.2 命令处理为单线程
+- redis命令的响应性能要快
+## 6.3 不同场景的考虑
+### 6.3.1 节点少
+优化空间，节省内存
+### 6.3.2 大数据/高频操作
+优化性能为主，保证 O(1)/O(logN) 性能
