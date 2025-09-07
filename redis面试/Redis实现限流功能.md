@@ -41,6 +41,14 @@ end
 
 
 ## 2.3 漏斗限流
+使用redis-cell实现：
+```
+CL.THROTTLE <key> <max_burst> <count_per_period> <period> [quantity]
+```
+- <max_burst>：最大突发容量
+- <count_per_period>：周期内允许的请求数
+- <period>：计数周期，单位是秒
+- [quantity]：可选，默认 1），当前这次请求要消耗的额度
 
 
 ## 2.4 令牌桶限流
