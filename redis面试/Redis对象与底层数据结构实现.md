@@ -67,6 +67,7 @@ typedef struct intset {
 } intset;
 ```
 <img width="316" height="133" alt="image" src="https://github.com/user-attachments/assets/4ab5f84e-bc97-46a1-a09a-97259e893465" />
+<img width="386" height="133" alt="image" src="https://github.com/user-attachments/assets/08055331-a52c-4897-bf39-ac300147e82c" />
 
 
 ## 4.2 dict
