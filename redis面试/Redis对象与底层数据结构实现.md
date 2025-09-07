@@ -49,3 +49,14 @@ Redis Hash 有两种底层实现
 当哈希表 field/value 数量少<mark>（默认 < 512）</mark>并且 field 和 value 都比较短<mark>（默认 < 64 字节）</mark>时，采用 ziplist（Redis 5.0 之前）或 listpack（Redis 7.0 之后）存储
 
 ## 3.2 dict（哈希表）
+### 3.2.1 场景
+当哈希元素比较多或 key/value 较长时，Redis 会把编码从 ziplist/listpack 自动转为 dict
+
+# 4.Set
+## 4.1 Intset
+### 使用条件
+- 集合中所有元素都是整数
+- intset 里的数是 有序存放的，可以用 二分查找 (intsetSearch)，复杂度 O(logN)，不会重复
+- 且元素数量较少<mark>（小于配置阈值，默认 512）</mark>
+
+## 4.2 dict
