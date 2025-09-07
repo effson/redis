@@ -47,3 +47,5 @@ Redis Hash 有两种底层实现
 ## 3.1 ziplist/listpack（紧凑表）
 ### 3.1.1 场景
 当哈希表 field/value 数量少<mark>（默认 < 512）</mark>并且 field 和 value 都比较短<mark>（默认 < 64 字节）</mark>时，采用 ziplist（Redis 5.0 之前）或 listpack（Redis 7.0 之后）存储
+
+## 3.2 dict（哈希表）
