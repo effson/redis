@@ -9,4 +9,4 @@
 <img width="631" height="114" alt="image" src="https://github.com/user-attachments/assets/aa7d7fd8-4900-40a5-8cce-560572ae42d3" />
 
 ### 2.1.1 局限性
-如上图所示。在很小的时间段内出现了18次操作，不能很好限流
+实际情况中请求不是均匀的，而是随机的，如上图所示。在很小的时间段内出现了18次操作，不能很好限流
