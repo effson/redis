@@ -19,12 +19,12 @@
 
 **<mark>server.c : main() --->  ae.c : aeMain()</mark>** <br>
 
-<img width="728" height="224" alt="image" src="https://github.com/user-attachments/assets/f177fe7b-6f84-4254-b53d-4f67246596ad" />
+<img width="546" height="168" alt="image" src="https://github.com/user-attachments/assets/f177fe7b-6f84-4254-b53d-4f67246596ad" />
 
 <br>
 
 **<mark>--->  ae.c : aeProcessEvents() --->  ae_epoll.c : aeApiPoll() </mark>** <br>
 
 
-<img width="591" height="38" alt="image" src="https://github.com/user-attachments/assets/d90fc1bc-0321-4868-bdd0-c9908a296bdf" />
+<img width="443" height="28" alt="image" src="https://github.com/user-attachments/assets/d90fc1bc-0321-4868-bdd0-c9908a296bdf" />
 
