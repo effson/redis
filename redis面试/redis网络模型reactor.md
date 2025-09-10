@@ -5,8 +5,12 @@
 
 <br>
 
----> **<mark>ae_poll.c : aeApiAddEvent()</mark>**
+---> **<mark>aeApiAddEvent()</mark>**
 
 <img width="485" height="46" alt="image" src="https://github.com/user-attachments/assets/8e88d7b8-9c7a-4c88-8aa7-055e6c015e54" />
 
 <br>
+
+**<mark>ae_poll.c : aeApiAddEvent()</mark>**
+
+<img width="866" height="435" alt="image" src="https://github.com/user-attachments/assets/c2391e4c-ed8e-4dd4-a65b-194f8c1bafa0" />
