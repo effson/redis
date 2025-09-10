@@ -14,3 +14,17 @@
 **<mark>ae_poll.c : aeApiAddEvent()</mark>**
 
 <img width="649" height="326" alt="image" src="https://github.com/user-attachments/assets/c2391e4c-ed8e-4dd4-a65b-194f8c1bafa0" />
+
+# 2. 监听事件并处理
+
+**<mark>server.c : main() --->  aeMain()</mark>** <br>
+<br>
+
+<img width="728" height="224" alt="image" src="https://github.com/user-attachments/assets/f177fe7b-6f84-4254-b53d-4f67246596ad" />
+
+<br>
+
+**<mark>server.c : main() --->  aeMain() --->  aeCreateFileEvent()</mark>** <br>
+
+
+
